@@ -1,0 +1,6 @@
+(defstruct RECORD
+  name score)
+
+(defun Above (score list)
+
+  )

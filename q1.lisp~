@@ -1,0 +1,13 @@
+(defstruct RECORD
+   name score)
+
+(defun sort-student-records (rec func)
+  (dotimes (i (1- (length rec)))
+    (do ((j i (1- j)))
+        ((minusp j))
+
+      (if (funcall func (record-score (aref rec (1+ j))) (record-score (aref rec j)))
+          (rotatef (aref rec (1+ j)) (aref rec j))
+          (return))))
+rec)
+;; lambda function returns either x or y depending on which one is true (x > y) returns x vice versa
